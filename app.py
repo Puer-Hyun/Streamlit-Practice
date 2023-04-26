@@ -15,7 +15,7 @@ def main():
     st.title("Book Rating Prediction using CatBoost")
     model = catboost.CatBoostRegressor()
     #기존에 저장해 둔 모델만을 불러오는 것이기 때문에, Batch service의 개념과 같다.
-    model.load_model('/Users/seonghyunpark/python_boostcamp2/project-serving/trained_model_20230426_133927.cbm')
+    #model.load_model('/Users/seonghyunpark/python_boostcamp2/project-serving/trained_model_20230426_133927.cbm')
 
     uploaded_file = st.file_uploader("Upload your pickle file", type=['pkl'])
 
