@@ -55,17 +55,16 @@ def convert_df(df):
     # IMPORTANT: Cache the conversion to prevent computation on every rerun
     return df.to_csv().encode('utf-8')        
 
-main()
                     
-# @cache_on_button_press('Authenticate')
-# def authenticate(password, userid) ->bool:
-#     return (password == root_password) & (userid == root_userid)
+@cache_on_button_press('Authenticate')
+def authenticate(password, userid) ->bool:
+    return (password == root_password) & (userid == root_userid)
 
-# userid = st.text_input('userid', type="password")
-# password = st.text_input('password', type="password")
+userid = st.text_input('userid', type="password")
+password = st.text_input('password', type="password")
 
-# if authenticate(password, userid):
-#     st.success('You are authenticated!')
-#     main()
-# else:
-#     st.error('The password is invalid.')
+if authenticate(password, userid):
+    st.success('You are authenticated!')
+    main()
+else:
+    st.error('The password is invalid.')
